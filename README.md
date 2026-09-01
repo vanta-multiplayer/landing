@@ -13,15 +13,15 @@ Landing page for Vanta Multiplayer.
 ## Development
 
 ```bash
-npm install
-npm run dev
+bun
+bun run dev
 ```
 
 ## Production build
 
 ```bash
-npm run build
-npm run preview
+bun run build
+bun run preview
 ```
 
 The site is static by default. Solid is used only for interactive islands such as navigation, particles, scroll progress and FAQ.
