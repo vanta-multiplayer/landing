@@ -1,0 +1,17 @@
+---
+import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/Button';
+import { ArrowUpRight } from 'lucide-solid';
+---
+<section class="relative overflow-hidden border-t border-border-soft py-28 sm:py-36">
+  <div class="absolute left-1/2 top-1/2 -z-10 size-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[.09] blur-[140px]"></div>
+  <div class="mx-auto grid max-w-[1180px] items-center gap-10 px-5 text-center sm:px-8 lg:grid-cols-[.4fr_1fr] lg:text-left">
+    <img src="/vanta-logo.png" alt="" class="logo-shadow mx-auto w-56 object-contain lg:w-72" />
+    <div>
+      <Badge>Follow the build</Badge>
+      <h2 class="mt-6 font-display text-5xl font-bold leading-[.98] tracking-[-.06em] sm:text-7xl">Be there from<br /><span class="text-primary">the beginning.</span></h2>
+      <p class="mx-auto mt-6 max-w-2xl text-base leading-8 text-muted lg:mx-0">Join the Vanta community, follow development and be first in line when multiplayer testing opens.</p>
+      <div class="mt-8"><Button href="https://discord.gg/Xmmv5Zh446" target="_blank" rel="noreferrer">Join Discord <ArrowUpRight class="size-4" /></Button></div>
+    </div>
+  </div>
+</section>

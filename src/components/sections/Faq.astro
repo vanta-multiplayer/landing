@@ -1,0 +1,23 @@
+---
+import { Badge } from '@/components/ui/Badge';
+import { Accordion } from '@/components/ui/Accordion';
+const items = [
+  { question: 'What is Vanta?', answer: 'Vanta is an independent multiplayer platform for Grand Theft Auto: San Andreas. It is the platform itself, not a single roleplay server or gamemode.' },
+  { question: 'Which GTA:SA version is supported?', answer: 'Development currently targets the classic 32-bit GTA: San Andreas 1.0 US executable. Additional versions may be considered after the core is stable.' },
+  { question: 'Which scripting languages will be supported?', answer: 'C# and TypeScript are planned as first-class resource languages for client-side, server-side and shared code.' },
+  { question: 'Can I use SA-MP or MTA resources?', answer: 'No. Vanta has its own resource system, APIs and networking. Existing SA-MP and MTA scripts are not directly compatible.' },
+  { question: 'Will Vanta support modern web UI?', answer: 'Yes. The plan is a CEF-based NUI layer with a direct native bridge and normal web technologies such as HTML, CSS and TypeScript.' },
+  { question: 'Is Vanta available to play now?', answer: 'Not publicly yet. The platform is in active development and the current priority is a stable multiplayer core before broader testing.' },
+  { question: 'Is Vanta affiliated with Rockstar Games?', answer: 'No. Vanta is an independent community project and is not affiliated with, endorsed by or sponsored by Rockstar Games or Take-Two Interactive.' },
+];
+---
+<section id="faq" class="border-t border-border-soft py-28 sm:py-36">
+  <div class="mx-auto grid max-w-[1480px] gap-12 px-5 sm:px-8 lg:grid-cols-[.65fr_1.35fr] lg:px-10">
+    <div>
+      <Badge>FAQ</Badge>
+      <h2 class="mt-6 font-display text-4xl font-bold leading-[1.02] tracking-[-.055em] sm:text-6xl">Questions,<br /><span class="text-primary">answered.</span></h2>
+      <p class="mt-6 max-w-sm text-sm leading-7 text-muted">The short version of what Vanta is, what it supports and where development is heading.</p>
+    </div>
+    <Accordion client:visible items={items} />
+  </div>
+</section>

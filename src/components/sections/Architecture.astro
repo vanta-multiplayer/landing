@@ -1,0 +1,28 @@
+---
+import { Badge } from '@/components/ui/Badge';
+import { ArrowRight } from 'lucide-solid';
+const nodes = [
+  ['Game', 'GTA:SA', '1.0 US · x86'],
+  ['Native client', 'Vanta Client', 'C++ · Plugin-SDK'],
+  ['Runtime', 'C# / TypeScript', 'Resources · API'],
+  ['Server', 'Vanta Server', 'Headless · .NET'],
+];
+---
+<section class="border-t border-border-soft py-24 sm:py-28">
+  <div class="mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-10">
+    <Badge>Under the hood</Badge>
+    <h2 class="mt-6 font-display text-4xl font-bold tracking-[-.055em] sm:text-6xl">One platform. <span class="text-primary">Clear boundaries.</span></h2>
+    <div class="mt-12 grid gap-3 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] lg:items-center">
+      {nodes.map(([label, title, desc], index) => (
+        <>
+          <div class={`rounded-lg border p-5 ${index === 1 ? 'border-primary/35 bg-primary/[.05]' : 'border-border-soft bg-white/[.018]'}`}>
+            <small class="text-[10px] font-bold uppercase tracking-[.18em] text-muted">{label}</small>
+            <strong class="mt-2 block font-display text-lg tracking-[-.03em]">{title}</strong>
+            <span class="mt-1 block text-xs text-muted">{desc}</span>
+          </div>
+          {index < nodes.length - 1 && <ArrowRight class="mx-auto hidden size-4 text-primary/70 lg:block" />}
+        </>
+      ))}
+    </div>
+  </div>
+</section>

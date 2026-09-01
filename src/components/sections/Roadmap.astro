@@ -1,0 +1,29 @@
+---
+import { Badge } from '@/components/ui/Badge';
+const milestones = [
+  ['01', 'Core bootstrap', 'Launcher, native client, stable GTA integration and multiplayer game entry.', 'done'],
+  ['02', 'Player synchronization', 'Two clients, remote players, on-foot movement, aiming and player state.', 'active'],
+  ['03', 'Vehicles & entities', 'Vehicles, occupants, streaming, ownership and synchronized world entities.', 'next'],
+  ['04', 'Developer runtimes', 'First-class C# and TypeScript resource APIs plus events and RPC.', 'next'],
+  ['05', 'NUI & ecosystem', 'CEF interfaces, SDK, documentation, server browser and public testing.', 'next'],
+];
+---
+<section id="roadmap" class="border-t border-border-soft py-28 sm:py-36">
+  <div class="mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-10">
+    <Badge>Development roadmap</Badge>
+    <div class="mt-6 grid gap-7 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
+      <h2 class="font-display text-4xl font-bold leading-[1.02] tracking-[-.055em] sm:text-6xl">Build the core.<br /><span class="text-primary">Then go further.</span></h2>
+      <p class="max-w-xl text-base leading-8 text-muted lg:justify-self-end">The roadmap stays deliberately technical: stabilize GTA first, prove synchronization next, then expose the platform to server developers.</p>
+    </div>
+    <div class="mt-14 divide-y divide-border-soft border-y border-border-soft">
+      {milestones.map(([n, title, body, state]) => (
+        <article class="grid gap-3 py-6 sm:grid-cols-[80px_240px_1fr_100px] sm:items-center">
+          <span class="font-display text-xs font-bold text-muted/70">{n}</span>
+          <h3 class="font-display text-lg font-bold tracking-[-.025em]">{title}</h3>
+          <p class="text-sm leading-7 text-muted">{body}</p>
+          <span class={`justify-self-start rounded-full border px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[.14em] sm:justify-self-end ${state === 'done' ? 'border-emerald-500/20 bg-emerald-500/[.06] text-emerald-300' : state === 'active' ? 'border-primary/25 bg-primary/[.07] text-primary-soft' : 'border-border text-muted'}`}>{state === 'done' ? 'stable' : state === 'active' ? 'wip' : 'planned'}</span>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

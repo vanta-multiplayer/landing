@@ -1,0 +1,32 @@
+---
+import { Badge } from '@/components/ui/Badge';
+import { Braces, Network, PanelsTopLeft, Boxes } from 'lucide-solid';
+const features = [
+  { icon: Network, title: 'Custom networking', body: 'A dedicated realtime protocol designed around player, vehicle and entity synchronization instead of web-style transport.' },
+  { icon: Braces, title: 'Modern scripting', body: 'First-class C# and TypeScript resources with client-side, server-side and shared code built around one consistent API.' },
+  { icon: PanelsTopLeft, title: 'CEF / NUI', body: 'Build interfaces with HTML, CSS and TypeScript using a native bridge between the game client and Chromium.' },
+  { icon: Boxes, title: 'Resource ecosystem', body: 'Independent resources, dependencies, events, RPC and reusable packages designed for complete custom gamemodes.' },
+];
+---
+<section id="platform" class="relative border-t border-border-soft py-28 sm:py-36">
+  <div class="mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-10">
+    <Badge>The platform</Badge>
+    <div class="mt-6 grid gap-7 lg:grid-cols-[1.2fr_.8fr] lg:items-end">
+      <h2 class="font-display text-4xl font-bold leading-[1.02] tracking-[-.055em] sm:text-6xl">Not another server.<br /><span class="text-primary">A new foundation.</span></h2>
+      <p class="max-w-xl text-base leading-8 text-muted lg:justify-self-end">Vanta is the multiplayer layer itself. Server owners get the freedom to build their own worlds, systems and communities on top of one modern platform.</p>
+    </div>
+
+    <div class="mt-14 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+      {features.map(({ icon: Icon, title, body }) => (
+        <article class="group relative overflow-hidden rounded-lg border border-border-soft bg-white/[.018] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/25 hover:bg-primary/[.025]">
+          <div class="absolute -right-10 -top-10 size-32 rounded-full bg-primary/[.05] blur-2xl transition group-hover:bg-primary/[.11]"></div>
+          <div class="flex items-start justify-between">
+            <div class="flex size-16 items-center justify-center rounded-md border border-border bg-surface-raised text-primary"><Icon class="size-8" /></div>
+          </div>
+          <h3 class="mt-14 font-display text-xl font-bold tracking-[-.03em]">{title}</h3>
+          <p class="mt-3 text-sm leading-7 text-muted">{body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
