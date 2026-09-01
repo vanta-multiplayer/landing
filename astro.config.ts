@@ -1,9 +1,14 @@
-import { defineConfig } from 'astro/config';
-import solid from '@astrojs/solid-js';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "astro/config";
+import solid from "@astrojs/solid-js";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  site: "https://vantamp.xyz",
+  base: "/",
+  output: "static",
+
   integrations: [solid()],
+
   vite: {
     plugins: [tailwindcss()],
   },
